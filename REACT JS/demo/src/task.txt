@@ -1,0 +1,42 @@
+React Task
+
+tasks (24-02-2025)
+
+display some welcome message along with buttons hide and show when user clicks on hide welcome message will be hide and vice versa
+
+create only one button and toggle it accordingly
+
+get the users name as an input with validation and display welcome username 
+
+--------------------------------------------------------------------------------------------------------------------------
+
+(4-3-2025)
+
+make a habit tracker
+
+(5-3-2025)
+
+make a proper timer with start stop and reset option 
+
+--------------------------------------------------------------------------------------------------------------------------
+
+(17-03-2025)
+
+make a cart 
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Date :-19-03-2025
+
+Q1:- Make a adynamic color palette (When user will click on color Text should be change with selected color as well as the background color)
+
+Q2:- Make an web app which allows users to generate QR and barcode dynamically.(Make It downloadable)
+
+Q3:- make an e-ccomerce application (Home page, Product page, Products-details, Profile Page, About and Contact Us Page)
+
+Q4:- Make an location traker application 
+
+
+Date:- 25-03-2025
+
+Make a web application which will fatch the data from given API display in proper reqiure format.
