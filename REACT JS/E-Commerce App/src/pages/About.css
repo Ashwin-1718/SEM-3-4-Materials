@@ -1,0 +1,369 @@
+/* About Page Styles */
+.about {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Hero Section */
+.about__hero {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+.hero__overlay {
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease;
+}
+
+.hero__subtitle {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease 0.3s both;
+}
+
+/* Container */
+.about__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section Titles */
+.section__title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  position: relative;
+}
+
+.section__title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #3498db;
+  margin: 1rem auto;
+}
+
+.section__subtitle {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.section__description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* Mission Section */
+.about__mission {
+  padding: 5rem 0;
+}
+
+.mission__content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.mission__text {
+  flex: 1;
+}
+
+.mission__image {
+  flex: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mission__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.mission__image:hover img {
+  transform: scale(1.05);
+}
+
+.mission__values {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.value__card {
+  flex: 1;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.value__card:hover {
+  transform: translateY(-10px);
+}
+
+.value__icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.value__card h3 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.value__card p {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+/* Team Section */
+.about__team {
+  padding: 5rem 0;
+  background: #f9f9f9;
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team__card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.team__card:hover {
+  transform: translateY(-10px);
+}
+
+.team__image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.team__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.team__card:hover .team__image img {
+  transform: scale(1.1);
+}
+
+.team__social {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  right: 0;
+  background: rgba(52, 152, 219, 0.8);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  transition: bottom 0.3s ease;
+}
+
+.team__card:hover .team__social {
+  bottom: 0;
+}
+
+.team__social a {
+  color: white;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.team__social a:hover {
+  transform: translateY(-5px);
+}
+
+.team__info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.team__info h3 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.team__role {
+  color: #3498db;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.team__bio {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+/* Stats Section */
+.about__stats {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+  color: white;
+}
+
+.stats__container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.stat__item {
+  text-align: center;
+}
+
+.stat__number {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.stat__label {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Testimonials Section */
+.about__testimonials {
+  padding: 5rem 0;
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.testimonial__card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.testimonial__rating {
+  color: #f1c40f;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial__quote {
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.testimonial__quote::before,
+.testimonial__quote::after {
+  content: '"';
+  font-size: 2rem;
+  color: #3498db;
+  opacity: 0.3;
+  position: absolute;
+}
+
+.testimonial__quote::before {
+  top: -15px;
+  left: -10px;
+}
+
+.testimonial__quote::after {
+  bottom: -25px;
+  right: -10px;
+}
+
+.testimonial__author {
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: right;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 2.5rem;
+  }
+  
+  .hero__subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .mission__content {
+    flex-direction: column;
+  }
+  
+  .mission__values {
+    flex-direction: column;
+  }
+  
+  .stats__container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .section__title {
+    font-size: 2rem;
+  }
+}
+
+/* Font Awesome Icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
