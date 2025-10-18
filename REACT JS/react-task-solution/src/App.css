@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.components-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.component {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.error {
+  color: red;
+  font-size: 0.8em;
+}
+
+button {
+  margin: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.subscribe {
+  background-color: green;
+  color: white;
+}
+
+.subscribed {
+  background-color: gray;
+  color: white;
+}
+
+input {
+  margin: 5px;
+  padding: 5px;
+}
