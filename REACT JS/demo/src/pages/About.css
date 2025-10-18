@@ -1,0 +1,128 @@
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    min-height: calc(100vh - 100px);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  }
+  
+  .about-content {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .about-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-heading {
+    color: #2b2d42;
+    font-size: 2.75rem;
+    margin-bottom: 2rem;
+    font-weight: 800;
+    position: relative;
+    text-align: center;
+    letter-spacing: -0.5px;
+  }
+  
+  .about-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(90deg, #4361ee, #3a0ca3);
+    border-radius: 5px;
+  }
+  
+  .about-subheading {
+    color: #4361ee;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+  }
+  
+  .about-paragraph {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a4e69;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+  
+  .about-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #4361ee;
+  }
+  
+  .about-card h3 {
+    color: #2b2d42;
+    margin-bottom: 1rem;
+  }
+  
+  .about-team {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin-top: 4rem;
+  }
+  
+  .team-member {
+    text-align: center;
+    max-width: 160px;
+    transition: transform 0.3s ease;
+  }
+  
+  .team-member:hover {
+    transform: translateY(-8px);
+  }
+  
+  .team-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.25rem;
+    border: 4px solid white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .team-name {
+    font-weight: 700;
+    color: #2b2d42;
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+  }
+  
+  .team-role {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-style: italic;
+  }
+  
+  @media (max-width: 768px) {
+    .about-content {
+      padding: 2rem 1.5rem;
+    }
+    
+    .about-heading {
+      font-size: 2.25rem;
+    }
+  }
