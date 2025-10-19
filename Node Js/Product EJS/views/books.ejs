@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books List</title>
+  <style>
+    h2 {
+      color: #000000;
+      font-size: 1.7rem;
+      /* text-align: center; */
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul a {
+      color: #00e1ff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      margin-right: 15px;
+      margin-bottom: 4px;
+    }
+
+    ul a:hover {
+      color: #000000;
+      text-decoration: underline;
+    }
+
+    li {
+      border: 1px solid rgb(55, 0, 255);
+      padding: 10px;
+      margin-bottom: 8px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 400px;
+    }
+
+    table {
+      text-align: center;
+      /* margin: 0 auto; */
+    }
+
+    a {
+      font-size: 1.2rem;
+      margin-left: 10px;
+      text-decoration: none;
+    }
+
+    add-btn :hover {
+      color: #000000;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Product List</h2>
+  <a class="add-btn" href="/add">Add Books</a>
+
+  <table cellpadding="10" cellspacing="10" border="1" style="border: 1px solid blue;">
+    <thead>
+      <tr>
+        <th>Book Title</th>
+        <th>Author</th>
+        <th>Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% books.forEach(b=> { %>
+        <tr>
+          <td>
+            <%= b.Title %>
+          </td>
+          <td>
+            <%= b.Author %>
+          </td>
+          <td>
+            <%= b.Year %>
+          </td>
+          <td>
+            <a href="/edit/<%= b._id %>">Update</a>
+            <a href="/delete/<%= b._id %>">Delete</a>
+          </td>
+        </tr>
+        <% }) %>
+    </tbody>
+  </table>
+
+</body>
+
+</html>

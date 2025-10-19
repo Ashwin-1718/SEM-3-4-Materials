@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'cambria', Courier, monospace;
+
+    }
+
+    h2 {
+      color: #000000;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      border: 2px solid rgb(0, 0, 0);
+      width: 10%;
+      padding: 10px;
+      color: rgb(0, 0, 0);
+      margin: 5px;
+    }
+
+    button {
+      width: 80px;
+      size: 21.1rem;
+      margin: 10px;
+      background-color: #00e1ff;
+      color: rgb(0, 0, 0);
+      padding: 12px;
+      border: none;
+      border-radius: 5px 10px 5px 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #00e1ff;
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Add Books</h2>
+  <form method="POST" action="/add">
+    <input type="text" name="Title" required placeholder="Title"><br>
+    <input type="text" name="Author" required placeholder="Author"><br>
+    <input type="number" name="Year" required placeholder="Year"><br>
+    <button type="submit">Add</button>
+  </form>
+
+</body>
+
+</html>
