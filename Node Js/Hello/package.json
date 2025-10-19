@@ -1,0 +1,12 @@
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "description": "hello",
+  "main": "index.js",
+  "scripts": {
+    "test": "hi",
+    "start" : "node index.js"
+  },
+  "author": "Ashwin",
+  "license": "ISC"
+}

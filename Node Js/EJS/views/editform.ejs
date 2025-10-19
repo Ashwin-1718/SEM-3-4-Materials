@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+    <style>
+        /* Use the same styles as your form.ejs */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        /* Include all other styles from form.ejs */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit User</h1>
+        
+        <a href="/" class="back-btn">
+            <button>← Back to Users List</button>
+        </a>
+
+        <form action="/api/users/<%= user._id %>?_method=PUT" method="POST">
+            <label for="first_name">First Name</label>
+            <input type="text" name="first_name" id="first_name" value="<%= user.firstName %>" required>
+            
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name" id="last_name" value="<%= user.lastName %>">
+            
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="<%= user.email %>" required>
+            
+            <label for="job_title">Job Title</label>
+            <input type="text" name="job_title" id="job_title" value="<%= user.jobTitle %>">
+            
+            <label>Gender</label>
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" name="gender" value="male" id="male" <%= user.gender === 'male' ? 'checked' : '' %>>
+                    <label for="male">Male</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="gender" value="female" id="female" <%= user.gender === 'female' ? 'checked' : '' %>>
+                    <label for="female">Female</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="gender" value="other" id="other" <%= user.gender === 'other' ? 'checked' : '' %>>
+                    <label for="other">Other</label>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Update User</button>
+        </form>
+    </div>
+</body>
+</html>
