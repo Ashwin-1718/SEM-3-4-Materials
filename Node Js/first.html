@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Button</title>
+    <style>
+        /* Initial button styling */
+        #btn {
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #00c8ff; 
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease; 
+        }
+
+        /* Added bounce animation for click */
+        @keyframes bounce {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        #btn.clicked {
+            animation: bounce 0.3s ease;
+        }
+
+        #clickCount {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        #message {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        #numberList {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Style for highlighted fruit */
+        ul li.highlighted {
+            background-color: #ffeb3b;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <ul type="i">
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Grapes</li>
+            <li>Mango</li>
+        </ul>
+    </div>
+
+    <!-- Added tabindex for keyboard accessibility -->
+    <button id="btn" tabindex="0">Click</button>
+    <div id="clickCount">Click count: 0</div>
+    <div id="message"></div>
+
+    <!-- This div will show the numbers 1 to 10 -->
+    <div id="numberList"></div>
+
+    <!-- Include confetti library for milestone celebration -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        let clickCount = 0;
+
+        let btn = document.getElementById("btn");
+        let clickCountDisplay = document.getElementById("clickCount");
+        let messageDisplay = document.getElementById("message");
+        let numberList = document.getElementById("numberList");
+        // Added fruit list reference for dynamic interaction
+        const fruitList = document.querySelectorAll("ul li");
+
+        // Mouse click event
+        btn.addEventListener("click", () => {
+            console.log("Button clicked!");
+
+            // Increment the click count and update the display
+            clickCount++;
+            clickCountDisplay.textContent = `Click count: ${clickCount}`;
+
+            // Bounce animation
+            btn.classList.add("clicked");
+            setTimeout(() => btn.classList.remove("clicked"), 300);
+
+            // Change button text for a short period
+            btn.textContent = "Clicked!";
+            setTimeout(() => {
+                btn.textContent = "Click";
+            }, 1000);
+
+            // Change the button shape to a circle and then back to original after a short time
+            btn.style.borderRadius = "50%";
+            setTimeout(() => {
+                btn.style.borderRadius = "10px";
+            }, 500);
+
+            // Change the background color of the page randomly
+            document.body.style.backgroundColor = getRandomColor();
+
+            // Display a message when clicked and highlight a random fruit
+            fruitList.forEach(li => li.classList.remove("highlighted")); // Reset highlights
+            const randomFruit = fruitList[Math.floor(Math.random() * fruitList.length)];
+            randomFruit.classList.add("highlighted");
+            messageDisplay.textContent = `You clicked ${clickCount} times and picked ${randomFruit.textContent}!`;
+            setTimeout(() => {
+                messageDisplay.textContent = "";
+            }, 2000);
+
+            // Confetti on every 5 clicks
+            if (clickCount % 5 === 0) {
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+                messageDisplay.textContent = `Milestone reached! 🎉 ${randomFruit.textContent} shines!`;
+            }
+        });
+
+        // Mouseover event to change color
+        btn.addEventListener("mouseover", () => {
+            btn.style.backgroundColor = "#ff5722"; // Change to orange on hover
+        });
+
+        // Mouseout event to reset color
+        btn.addEventListener("mouseout", () => {
+            btn.style.backgroundColor = "#00c8ff"; // Reset to original color
+        });
+
+        // Added keyboard accessibility
+        btn.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault(); // Prevent scrolling on space
+                btn.click(); // Trigger the click event
+            }
+        });
+
+        // Function to generate a random color
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Display numbers 1 to 10 in the webpage
+        let numbers = "";
+        for (let i = 1; i <= 10; i++) {
+            numbers += `${i} <br>`; // Create a string with numbers separated by line breaks
+        }
+        numberList.innerHTML = numbers; // Display the numbers in the numberList div
+
+    </script>
+</body>
+</html>
